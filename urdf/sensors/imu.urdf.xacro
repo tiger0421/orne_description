@@ -4,7 +4,7 @@
   <xacro:macro name="sensor_imu" params="name parent *origin size">
     <joint name="${name}_joint" type="fixed">
       <axis xyz="1 0 0"/>
-        <!origin xyz="0 0 0.2825"/>
+        <origin xyz="0 0 0.2825"/>
         <insert_block name="origin"/>
         <parent link="${parent}"/>
         <child link="${name}_link"/>
@@ -32,7 +32,7 @@
 
     <gazebo>
       <plugin name="ros_imu" filename="libgazebo_ros_imu.so">
-        <bodyName>imu_link</bodyName> <! bodyName always set base_link by URDF parser >
+        <bodyName>imu_link</bodyName> <!-- bodyName always set base_link by URDF parser -->
         <topicName>imu_data</topicName>
         <serviceName>imu_service</serviceName>
         <gaussianNoise>0.005</gaussianNoise>
